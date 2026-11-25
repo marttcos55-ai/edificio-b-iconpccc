@@ -1,10 +1,8 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Edificio B - ICO</title>
 
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
@@ -28,7 +26,7 @@
             width: 90%;
             box-sizing: border-box;
             padding: 18px;
-            background: rgba(0, 65, 45, 0.92);
+            background: rgba(0, 90, 60, 0.93);
             color: white;
             border: 2px solid white;
             border-radius: 12px;
@@ -53,24 +51,22 @@
         }
     </style>
 </head>
-
 <body>
 
     <div id="informacion">
         <h2>EDIFICIO B</h2>
-        <h3>Ingenieria en Computacion (ICO)</h3>
+        <h3>Ingeniería en Computación (ICO)</h3>
         <p>
-            Carrera enfocada en el desarrollo de software,
-            programacion, redes, sistemas computacionales
-            e inteligencia artificial, aplicando la tecnologia
-            para solucionar problemas de la sociedad.
+            Carrera enfocada en el desarrollo de software, programación,
+            redes, sistemas computacionales e inteligencia artificial,
+            aplicando la tecnología para solucionar problemas de la sociedad.
         </p>
     </div>
 
     <a-scene
         vr-mode-ui="enabled: false;"
         loading-screen="enabled: false;"
-        renderer="logarithmicDepthBuffer: true;"
+        renderer="logarithmicDepthBuffer: true; colorManagement: true;"
         arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
         id="scene"
         embedded
@@ -83,17 +79,25 @@
             </a-asset-item>
         </a-assets>
 
+        <!-- Luces -->
         <a-light
             type="ambient"
             color="#FFFFFF"
-            intensity="1.8">
+            intensity="2.2">
         </a-light>
 
         <a-light
             type="directional"
             color="#FFFFFF"
-            intensity="2"
+            intensity="2.4"
             position="2 5 3">
+        </a-light>
+
+        <a-light
+            type="directional"
+            color="#DFF5E8"
+            intensity="1.2"
+            position="-3 4 2">
         </a-light>
 
         <a-marker
@@ -111,13 +115,14 @@
                 animation-mixer="loop: repeat"
                 gltf-model="#animated-asset"
                 class="clickable"
-                gesture-handler>
+                gesture-handler
+                position="0 0 0"
+                rotation="0 0 0">
             </a-entity>
 
         </a-marker>
 
         <a-entity camera></a-entity>
-
     </a-scene>
 
     <script>
